@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="table-responsive">
-      <table class="table" 
+    <table class="table" 
             *ngIf='products && products.length'>
         <thead>
           <tr>
@@ -48,7 +48,10 @@
             <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price | currency: 'AUD': 'symbol': '1.2-2'}}</td>
-            <td>{{ product.starRating }}</td>
+            <td><pm-star 
+              [rating]='product.starRating'
+              (ratingClicked)='onNotify($event)'>
+            </pm-star></td>
           </tr>
         </tbody>
       </table>

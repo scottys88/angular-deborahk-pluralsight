@@ -11,6 +11,7 @@ export class ProductListComponent implements OnInit {
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage = false;
+  starRating: Product[];
 
 
   private filteredProducts: Product[];
@@ -84,6 +85,10 @@ export class ProductListComponent implements OnInit {
 
   toggleImages(): void {
     this.showImage = !this.showImage;
+  }
+
+  onNotify(message: string) {
+    this.pageTitle = message;
   }
 
 }
