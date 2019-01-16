@@ -9,7 +9,7 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class ProductService {
   private productUrl = 'api/products/products.json';
-  
+
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
@@ -19,9 +19,9 @@ export class ProductService {
     );
   }
 
-  private handleError(err: HttpErrorResponse){ 
+  private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
-    if(err.error instanceof ErrorEvent) {
+    if (err.error instanceof ErrorEvent) {
       errorMessage = `An error occured: ${err.error.message}`;
     } else {
       errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`
@@ -31,5 +31,5 @@ export class ProductService {
    }
 
 
-  
+
 }

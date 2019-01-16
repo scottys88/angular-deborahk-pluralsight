@@ -1,0 +1,8 @@
+<div class='card' *ngIf='product'>
+  <div class="card-header">
+    {{ pageTitle + ': ' + product.productName }}
+  </div>
+</div>
+<div class="card-footer">
+<button class="btn btn-outline-secondary" (click)='onBack()'>Back</button>
+</div>
